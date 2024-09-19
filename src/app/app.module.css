@@ -1,0 +1,8 @@
+.app {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f7;
+  outline: solid 2px red;
+}

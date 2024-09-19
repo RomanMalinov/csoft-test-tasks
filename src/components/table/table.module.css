@@ -1,0 +1,79 @@
+.section {
+  margin: 0 64px;
+  outline: solid 2px gold;
+}
+
+.table {
+  border-collapse: collapse;
+  outline: solid 2px silver;
+}
+
+.hrmain {
+  height: 40px;
+  display: flex;
+}
+
+.thTable {
+  padding: 0;
+  border-bottom: 1px solid gray;
+}
+
+.thTConteiner {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thText {
+  margin-left: 8px;
+}
+
+.tdTable {
+  margin: 0;
+  width: 240px;
+  height: 40px;
+  padding: 0;
+  border-bottom: 1px solid gray;
+  border-left: none;
+  border-right: none;
+}
+
+.input {
+  padding: 0 0 0 8px;
+  width: 224px;
+  height: 31px;
+  border: none;
+  background-color: #f2f2f7;
+}
+
+.input::placeholder {
+  color: black; 
+}
+
+.addButton {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px gray;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.delButton {
+  width: 60px;
+  height: 20px;
+  border-radius: 20px;
+  border: solid 1px gray;
+  cursor: pointer;
+}
+
+.delButton:hover {
+  opacity: 0.5;
+  transition: 1s;
+  cursor: pointer;
+}
