@@ -4,7 +4,7 @@ import { generateJSON } from '@/utils/helpers';
 import styles from "./table.module.css";
 
 const Table = () => {
-  const [columns, setColumns] = useState<string[]>(["Столбец", "Столбец"]);
+  const [columns, setColumns] = useState<string[]>(["Column 1", "Column 2"]);
   const [rows, setRows] = useState<string[][]>([
     ["", ""],
     ["", ""],
@@ -14,7 +14,8 @@ const Table = () => {
   const [dataTypes, setDataTypes] = useState<string[]>(["string", "string"]);
 
   const addColumn = () => {
-    setColumns([...columns, "Столбец"]);
+    const newColumnNumber = columns.length + 1;
+    setColumns([...columns, `Column ${newColumnNumber}`]); // Добавляем новый столбец с номером
     setRows(rows.map(row => [...row, ""]));
     setDataTypes([...dataTypes, "string"]);
   };
@@ -47,7 +48,7 @@ const Table = () => {
 
   const handleGenerateJSON = () => {
     const jsonData = generateJSON(columns, rows, dataTypes);
-    console.log(JSON.stringify(jsonData, null, 2)); // Output to console
+    console.log(JSON.stringify(jsonData, null, 2));
   };
 
   return (
@@ -58,10 +59,10 @@ const Table = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-            {columns.map((column, index) => (
+            {columns.map((_, index) => (
               <th className={styles.thTable} key={index}>
                  <div className={styles.thTConteiner}>
-                 <span className={styles.thText}>{column}</span>
+                 <span className={styles.thText}>Столбец</span>
                 <select
                   value={dataTypes[index]}
                   onChange={(e) => handleDataTypeChange(index, e.target.value)}
