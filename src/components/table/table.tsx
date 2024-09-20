@@ -15,7 +15,7 @@ const Table = () => {
 
   const addColumn = () => {
     const newColumnNumber = columns.length + 1;
-    setColumns([...columns, `Column ${newColumnNumber}`]); // Добавляем новый столбец с номером
+    setColumns([...columns, `Column ${newColumnNumber}`]);
     setRows(rows.map(row => [...row, ""]));
     setDataTypes([...dataTypes, "string"]);
   };
@@ -53,25 +53,28 @@ const Table = () => {
 
   return (
     <section className={styles.section}>
-      <button className={styles.addButton} onClick={addColumn}>Добавить столбец</button>
-      <button className={styles.addButton} onClick={addRow}>Добавить строку</button>
-      <button className={styles.addButton} onClick={handleGenerateJSON}>Generate JSON</button>
+      <div className={styles.buttonConteiner}>
+        <button className={styles.addButton} onClick={addColumn}>Добавить столбец</button>
+        <button className={styles.addButton} onClick={addRow}>Добавить строку</button>
+        <button className={styles.addButton} onClick={handleGenerateJSON}>JSON in console</button>
+      </div>
       <table className={styles.table}>
         <thead>
           <tr>
             {columns.map((_, index) => (
               <th className={styles.thTable} key={index}>
-                 <div className={styles.thTConteiner}>
-                 <span className={styles.thText}>Столбец</span>
-                <select
-                  value={dataTypes[index]}
-                  onChange={(e) => handleDataTypeChange(index, e.target.value)}
-                >
-                  <option value="string">Строка</option>
-                  <option value="percent">%</option>
-                </select>
-                 <button className={styles.delButton} onClick={() => removeColumn(index)}>Удалить</button>
-                 </div>
+                <div className={styles.thTConteiner}>
+                  <span className={styles.thText}>Столбец</span>
+                  <select
+                    className={styles.selectTable}
+                    value={dataTypes[index]}
+                    onChange={(e) => handleDataTypeChange(index, e.target.value)}
+                  >
+                    <option value="string">Строка</option>
+                    <option value="percent">%</option>
+                  </select>
+                  <button className={styles.delButton} onClick={() => removeColumn(index)}>Удалить</button>
+                </div>
               </th>
             ))}
           </tr>
@@ -97,7 +100,7 @@ const Table = () => {
           ))}
         </tbody>
       </table>
-    </section>
+    </section >
   );
 };
 

@@ -1,5 +1,6 @@
 .header {
   margin: 48px 64px 64px;
+  max-width: 1920px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,10 +30,72 @@
   font-weight: 400;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  /* vertical-align: bottom; */
 }
 
 .logo {
   width: 154px;
   height: 100px;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    margin: 24px 32px 32px;
+    height: auto;
+    flex-direction: column;
+    align-items:center;
+  }
+
+  .title {
+    font-size: 48px;
+    height: auto;
+  }
+
+  .subTitle {
+    font-size: 24px;
+    height: auto;
+  }
+
+  .logo {
+    width: 120px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin: 16px 16px 24px;
+    height: auto;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subTitle {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin: 8px 8px 16px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subTitle {
+    font-size: 18px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 50px;
+  }
 }

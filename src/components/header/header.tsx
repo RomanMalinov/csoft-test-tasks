@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./header.module.css";
+import logo from "../header/logo/logo.svg";
 
-import logo from "../header/logo/logo.svg"
 const Header = () => {
   return (
     <header className={styles.header}>
@@ -11,7 +11,6 @@ const Header = () => {
       </div>
       <Image className={styles.logo} src={logo} alt="Логотип" />
     </header>
-
   );
 };
 
