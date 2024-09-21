@@ -4,8 +4,6 @@
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-[Посмотреть тестовое задание](https://csoft-test-tasks-c9c8.vercel.app/)
-
 ## Getting Started
 
 First, run the development server:
